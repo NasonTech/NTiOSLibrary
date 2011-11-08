@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		CA3F5EC61468D33300BDC7B1 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CA3F5EC71468D33300BDC7B1 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				CA3F5ECA1468D34000BDC7B1 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		CA3F5E911468C67700BDC7B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5E901468C67700BDC7B1 /* Foundation.framework */; };
+		CA3F5EA51468C76B00BDC7B1 /* NTCGGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA11468C76B00BDC7B1 /* NTCGGeometry.h */; };
+		CA3F5EA61468C76B00BDC7B1 /* NTCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EA21468C76B00BDC7B1 /* NTCGGeometry.m */; };
+		CA3F5EA71468C76B00BDC7B1 /* NTUIToolTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA31468C76B00BDC7B1 /* NTUIToolTipView.h */; };
+		CA3F5EA81468C76B00BDC7B1 /* NTUIToolTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EA41468C76B00BDC7B1 /* NTUIToolTipView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CA3F5E8D1468C67700BDC7B1 /* libNTiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNTiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3F5E901468C67700BDC7B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CA3F5EA11468C76B00BDC7B1 /* NTCGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTCGGeometry.h; sourceTree = "<group>"; };
+		CA3F5EA21468C76B00BDC7B1 /* NTCGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTCGGeometry.m; sourceTree = "<group>"; };
+		CA3F5EA31468C76B00BDC7B1 /* NTUIToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTUIToolTipView.h; sourceTree = "<group>"; };
+		CA3F5EA41468C76B00BDC7B1 /* NTUIToolTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTUIToolTipView.m; sourceTree = "<group>"; };
+		CA3F5ECB1468D51C00BDC7B1 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		CA3F5ECC1468D52A00BDC7B1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CA3F5ECD1468D53100BDC7B1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA3F5E8A1468C67700BDC7B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5E911468C67700BDC7B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA3F5E821468C67700BDC7B1 = {
+			isa = PBXGroup;
+			children = (
+				CA3F5ECD1468D53100BDC7B1 /* README.md */,
+				CA3F5ECC1468D52A00BDC7B1 /* LICENSE */,
+				CA3F5ECB1468D51C00BDC7B1 /* AppledocSettings.plist */,
+				CA3F5EA01468C76B00BDC7B1 /* NTiOSLibrary */,
+				CA3F5E8F1468C67700BDC7B1 /* Frameworks */,
+				CA3F5E8E1468C67700BDC7B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA3F5E8E1468C67700BDC7B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5E8D1468C67700BDC7B1 /* libNTiOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA3F5E8F1468C67700BDC7B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5E901468C67700BDC7B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA3F5EA01468C76B00BDC7B1 /* NTiOSLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5EA11468C76B00BDC7B1 /* NTCGGeometry.h */,
+				CA3F5EA21468C76B00BDC7B1 /* NTCGGeometry.m */,
+				CA3F5EA31468C76B00BDC7B1 /* NTUIToolTipView.h */,
+				CA3F5EA41468C76B00BDC7B1 /* NTUIToolTipView.m */,
+			);
+			name = NTiOSLibrary;
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CA3F5E8B1468C67700BDC7B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5EA51468C76B00BDC7B1 /* NTCGGeometry.h in Headers */,
+				CA3F5EA71468C76B00BDC7B1 /* NTUIToolTipView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CA3F5E8C1468C67700BDC7B1 /* NTiOSLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3F5E9A1468C67700BDC7B1 /* Build configuration list for PBXNativeTarget "NTiOSLibrary" */;
+			buildPhases = (
+				CA3F5E891468C67700BDC7B1 /* Sources */,
+				CA3F5E8A1468C67700BDC7B1 /* Frameworks */,
+				CA3F5E8B1468C67700BDC7B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NTiOSLibrary;
+			productName = NTiOSLibrary;
+			productReference = CA3F5E8D1468C67700BDC7B1 /* libNTiOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA3F5E841468C67700BDC7B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = CA3F5E871468C67700BDC7B1 /* Build configuration list for PBXProject "NTiOSLibrary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CA3F5E821468C67700BDC7B1;
+			productRefGroup = CA3F5E8E1468C67700BDC7B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA3F5E8C1468C67700BDC7B1 /* NTiOSLibrary */,
+				CA3F5EC61468D33300BDC7B1 /* Documentation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA3F5ECA1468D34000BDC7B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc .";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA3F5E891468C67700BDC7B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5EA61468C76B00BDC7B1 /* NTCGGeometry.m in Sources */,
+				CA3F5EA81468C76B00BDC7B1 /* NTUIToolTipView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CA3F5E981468C67700BDC7B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA3F5E991468C67700BDC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA3F5E9B1468C67700BDC7B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NTiOSLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = NTiOS;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA3F5E9C1468C67700BDC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NTiOSLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = NTiOS;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA3F5EC81468D33300BDC7B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA3F5EC91468D33300BDC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA3F5E871468C67700BDC7B1 /* Build configuration list for PBXProject "NTiOSLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3F5E981468C67700BDC7B1 /* Debug */,
+				CA3F5E991468C67700BDC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3F5E9A1468C67700BDC7B1 /* Build configuration list for PBXNativeTarget "NTiOSLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3F5E9B1468C67700BDC7B1 /* Debug */,
+				CA3F5E9C1468C67700BDC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3F5EC71468D33300BDC7B1 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3F5EC81468D33300BDC7B1 /* Debug */,
+				CA3F5EC91468D33300BDC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA3F5E841468C67700BDC7B1 /* Project object */;
+}
