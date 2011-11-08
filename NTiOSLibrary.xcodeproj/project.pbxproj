@@ -22,9 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		CA3F5E911468C67700BDC7B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5E901468C67700BDC7B1 /* Foundation.framework */; };
-		CA3F5EA51468C76B00BDC7B1 /* NTCGGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA11468C76B00BDC7B1 /* NTCGGeometry.h */; };
+		CA3F5EA51468C76B00BDC7B1 /* NTCGGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA11468C76B00BDC7B1 /* NTCGGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3F5EA61468C76B00BDC7B1 /* NTCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EA21468C76B00BDC7B1 /* NTCGGeometry.m */; };
-		CA3F5EA71468C76B00BDC7B1 /* NTUIToolTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA31468C76B00BDC7B1 /* NTUIToolTipView.h */; };
+		CA3F5EA71468C76B00BDC7B1 /* NTUIToolTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3F5EA31468C76B00BDC7B1 /* NTUIToolTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3F5EA81468C76B00BDC7B1 /* NTUIToolTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EA41468C76B00BDC7B1 /* NTUIToolTipView.m */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +229,7 @@
 				GCC_PREFIX_HEADER = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = NTiOS;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -242,6 +243,7 @@
 				GCC_PREFIX_HEADER = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = NTiOS;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -102,22 +102,44 @@
 	return self;
 }
 
+- (id)initWithMessage:(NSString *)message
+{
+	return [self initWithTitle:nil message:message];
+}
+
 - (id)initWithTitle:(NSString *)title message:(NSString *)message pointAt:(id)item
 {
 	self = [self initWithTitle:title message:message];
 
-	if ([item isKindOfClass:[UIView class]])
-		self.pointAt = item;
-	else
-		self.pointAt = [item valueForKey:@"view"];
+	[self pointAt:item];
 
 	return self;
+}
+
+- (void)pointAt:(id)item
+{
+	if ([item isKindOfClass:[UIView class]])
+	{
+		UIView *view = (UIView *)item;
+		self.pointAt = [view.superview convertRect:view.frame toView:nil];
+	}
+	else if ([item isKindOfClass:[NSValue class]])
+	{
+		NSNumber *number = (NSNumber *)item;
+		self.pointAt = [number CGRectValue];
+	}
+	else
+	{
+		UIView *view = (UIView *)[item valueForKey:@"view"];
+		self.pointAt = [view.superview convertRect:view.frame toView:nil];
+	}
 }
 
 #define SPACING 10
 
 - (void)showAnimated:(BOOL)animated
 {
+	self.frame = [self calculateFrameForOrientation:[self calculateOrientation]];
 	[self setHidden:NO];
 
 	if (animated)
@@ -147,20 +169,6 @@
 - (void)dismiss
 {
 	[self removeFromSuperview];
-}
-
-- (void)setPointAt:(UIView *)pointAt
-{
-	[_pointAt release], _pointAt = nil;
-	_pointAt = [pointAt retain];
-
-	self.frame = [self calculateFrameForOrientation:[self calculateOrientation]];
-	pointAtFrameInWindow = [self.pointAt.superview convertRect:self.pointAt.frame toView:nil];
-}
-
-- (void)didMoveToSuperview
-{
-	pointAtFrameInWindow = [self.pointAt.superview convertRect:self.pointAt.frame toView:nil];
 }
 
 // Frame calculations
@@ -199,14 +207,13 @@
 
 - (CGRect)calculateFrameForOrientation:(NTUIToolTipViewOrientation)orientation
 {
-	CGRect frame = CGRectMake(0, 0, 0, 0);
+	CGRect frame = CGRectMake(0, 0, 50, 50);
 
-	CGRect pointAtFrameInWindowA = [self.pointAt.superview convertRect:self.pointAt.frame toView:nil];
-	
 	if (orientation == NTUIToolTipViewOrientationTop)
 	{
 		CGFloat frameMaxWidth = self.superview.frame.size.width - NTCGOffsetGetWidth(self.margin);
-		CGFloat frameMaxHeight = CGRectGetMinY(self.pointAt.frame) - NTCGOffsetGetHeight(self.margin);
+		CGFloat miny = CGRectGetMinY(self.pointAt);
+		CGFloat frameMaxHeight = miny - NTCGOffsetGetHeight(self.margin);
 
 		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - NTCGOffsetGetWidth(self.padding),
 											frameMaxHeight - NTCGOffsetGetHeight(self.padding) - self.arrowSize.height);
@@ -224,15 +231,15 @@
 		CGFloat frameWidth = fmaxf(titleMinSize.width, messageMinSize.width) + NTCGOffsetGetWidth(self.padding);
 		CGFloat frameHeight = fmaxf(titleMinSize.height, messageMinSize.height) + NTCGOffsetGetHeight(self.padding) + self.arrowSize.height;
 
-		CGFloat frameLeft = CGRectGetMidX(pointAtFrameInWindowA) - frameWidth / 2;
-		CGFloat frameTop = CGRectGetMinY(pointAtFrameInWindowA) - frameHeight;
-		
+		CGFloat frameLeft = CGRectGetMidX(self.pointAt) - frameWidth / 2;
+		CGFloat frameTop = CGRectGetMinY(self.pointAt) - frameHeight;
+
 		frame = CGRectMake(frameLeft, frameTop, frameWidth, frameHeight);
 	}
 	else if (orientation == NTUIToolTipViewOrientationBottom)
 	{
 		CGFloat frameMaxWidth = self.superview.frame.size.width - NTCGOffsetGetWidth(self.margin);
-		CGFloat frameMaxHeight = CGRectGetMinY(self.pointAt.frame) - NTCGOffsetGetHeight(self.margin);
+		CGFloat frameMaxHeight = CGRectGetMinY(self.pointAt) - NTCGOffsetGetHeight(self.margin);
 
 		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - NTCGOffsetGetWidth(self.padding),
 											frameMaxHeight - NTCGOffsetGetHeight(self.padding) - self.arrowSize.height);
@@ -246,14 +253,14 @@
 		CGFloat frameWidth = fmaxf(titleMinSize.width, messageMinSize.width) + NTCGOffsetGetWidth(self.padding);
 		CGFloat frameHeight = fmaxf(titleMinSize.height, messageMinSize.height) + NTCGOffsetGetHeight(self.padding) + self.arrowSize.height;
 
-		CGFloat frameLeft = CGRectGetMidX(pointAtFrameInWindowA) - frameWidth / 2;
-		CGFloat frameTop = CGRectGetMaxY(pointAtFrameInWindowA);
+		CGFloat frameLeft = CGRectGetMidX(self.pointAt) - frameWidth / 2;
+		CGFloat frameTop = CGRectGetMaxY(self.pointAt);
 
 		frame = CGRectMake(frameLeft, frameTop, frameWidth, frameHeight);
 	}
 	else if (orientation == NTUIToolTipViewOrientationLeft)
 	{
-		CGFloat frameMaxWidth = CGRectGetMinX(self.pointAt.frame) - self.margin.left;
+		CGFloat frameMaxWidth = CGRectGetMinX(self.pointAt) - self.margin.left;
 		CGFloat frameMaxHeight = self.superview.frame.size.height - NTCGOffsetGetHeight(self.margin);
 
 		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - NTCGOffsetGetWidth(self.padding) - self.arrowSize.height,
@@ -268,17 +275,17 @@
 		CGFloat frameWidth = fmaxf(titleMinSize.width, messageMinSize.width) + NTCGOffsetGetWidth(self.padding) + self.arrowSize.height;
 		CGFloat frameHeight = fmaxf(titleMinSize.height, messageMinSize.height) + NTCGOffsetGetHeight(self.padding);
 
-		CGFloat frameLeft = CGRectGetMinX(pointAtFrameInWindowA) - frameWidth;
-		CGFloat frameTop = CGRectGetMidY(pointAtFrameInWindowA) - frameHeight / 2;
+		CGFloat frameLeft = CGRectGetMinX(self.pointAt) - frameWidth;
+		CGFloat frameTop = CGRectGetMidY(self.pointAt) - frameHeight / 2;
 		
 		frame = CGRectMake(frameLeft, frameTop, frameWidth, frameHeight);
 	}
 	else if (orientation == NTUIToolTipViewOrientationRight)
 	{
-		CGFloat frameMaxWidth = self.superview.frame.size.width - CGRectGetMaxX(self.pointAt.frame) - self.margin.right;
+		CGFloat frameMaxWidth = self.superview.frame.size.width - CGRectGetMaxX(self.pointAt) - self.margin.right;
 		CGFloat frameMaxHeight = self.superview.frame.size.height - NTCGOffsetGetHeight(self.margin);
 
-		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - CGRectGetMaxX(self.pointAt.frame) - self.margin.right,
+		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - CGRectGetMaxX(self.pointAt) - self.margin.right,
 											frameMaxHeight - NTCGOffsetGetHeight(self.padding));
 		CGSize titleMinSize = [self.title sizeWithFont:titleLabel.font
 									 constrainedToSize:contentsMaxSize
@@ -290,8 +297,8 @@
 		CGFloat frameWidth = fmaxf(titleMinSize.width, messageMinSize.width) + NTCGOffsetGetWidth(self.padding) + self.arrowSize.height;
 		CGFloat frameHeight = fmaxf(titleMinSize.height, messageMinSize.height) + NTCGOffsetGetHeight(self.padding);
 
-		CGFloat frameLeft = CGRectGetMaxX(pointAtFrameInWindowA);
-		CGFloat frameTop = CGRectGetMidY(pointAtFrameInWindowA) - frameHeight / 2;
+		CGFloat frameLeft = CGRectGetMaxX(self.pointAt);
+		CGFloat frameTop = CGRectGetMidY(self.pointAt) - frameHeight / 2;
 		
 		frame = CGRectMake(frameLeft, frameTop, frameWidth, frameHeight);
 	}
@@ -309,10 +316,10 @@
 	CGRect leftPlacementFrame = [self calculateFrameForOrientation:NTUIToolTipViewOrientationLeft];
 	CGRect rightPlacementFrame = [self calculateFrameForOrientation:NTUIToolTipViewOrientationRight];
 
-	CGFloat topOffset = CGRectGetMidX(topPlacementFrame) - CGRectGetMidX(self.pointAt.frame);
-	CGFloat bottomOffset = CGRectGetMidX(bottomPlacementFrame) - CGRectGetMidX(self.pointAt.frame);
-	CGFloat leftOffset = CGRectGetMidY(leftPlacementFrame) - CGRectGetMidY(self.pointAt.frame);
-	CGFloat rightOffset = CGRectGetMidY(rightPlacementFrame) - CGRectGetMidY(self.pointAt.frame);
+	CGFloat topOffset = CGRectGetMidX(topPlacementFrame) - CGRectGetMidX(self.pointAt);
+	CGFloat bottomOffset = CGRectGetMidX(bottomPlacementFrame) - CGRectGetMidX(self.pointAt);
+	CGFloat leftOffset = CGRectGetMidY(leftPlacementFrame) - CGRectGetMidY(self.pointAt);
+	CGFloat rightOffset = CGRectGetMidY(rightPlacementFrame) - CGRectGetMidY(self.pointAt);
 
 	NSMutableDictionary *offsetsAbsolute = [NSMutableDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSNumber numberWithFloat:fabsf(topOffset)],
 																												[NSNumber numberWithFloat:fabsf(bottomOffset)],
@@ -360,7 +367,7 @@
 	titleLabel.font = [titleLabel.font fontWithSize:titleLabel.font.pointSize - 0.1];
 	messageLabel.font = [messageLabel.font fontWithSize:messageLabel.font.pointSize - 0.1];
 
-	return [self calculateOrientation];
+//	return [self calculateOrientation];
 
 	return NTUIToolTipViewOrientationNone;
 }
@@ -448,7 +455,7 @@
 		CGContextTranslateCTM(context, self.arrowSize.height, 0);
 
 	// Draw shape
-	[self drawRoundedRectWithArrow:containerRect inContext:context withRadius:8 pointingAtFrame:self.pointAt.frame];
+	[self drawRoundedRectWithArrow:containerRect inContext:context withRadius:8 pointingAtFrame:self.pointAt];
 	CGContextSetLineWidth(context, 2.0);
 	CGContextDrawPath(context, kCGPathFillStroke);
 
@@ -458,7 +465,7 @@
 		1.0, 1.0, 1.0, 0.00,
 	};
 
-	[self drawRoundedRectWithArrow:containerRect inContext:context withRadius:8 pointingAtFrame:self.pointAt.frame];
+	[self drawRoundedRectWithArrow:containerRect inContext:context withRadius:8 pointingAtFrame:self.pointAt];
 	CGContextClip(context);
 
 	CGColorSpaceRef rgbColorspace = CGColorSpaceCreateDeviceRGB();

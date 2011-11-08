@@ -37,11 +37,18 @@ typedef NSUInteger NTUIToolTipViewArrowPosition;
 ///-----------------------------------------------------------------------------
 
 /** Convenience method for initializing a tool tip view.
+ 
+ @param message Descriptive text that provides more details than the title.
+ */
+- (id)initWithMessage:(NSString *)message;
+
+/** Convenience method for initializing a tool tip view.
 
  @param title The string that appears in the receiver's title bar.
  @param message Descriptive text that provides more details than the title.
  */
 - (id)initWithTitle:(NSString *)title message:(NSString *)message;
+
 /** Convenience method for initializing a tool tip view.
  
  @param title The string that appears in the receiver's title bar.
@@ -58,8 +65,8 @@ typedef NSUInteger NTUIToolTipViewArrowPosition;
 @property (nonatomic, retain) NSString *title;
 /** Descriptive text that provides more details than the title. */
 @property (nonatomic, retain) NSString *message;
-/** The view in which to point at. */
-@property (nonatomic, retain) UIView *pointAt;
+/** The frame in which to point at in screen coordinates. */
+@property (nonatomic, assign) CGRect pointAt;
 /** The receiver's fill color. */
 @property (nonatomic, retain) UIColor *fillColor;
 /** The receiver's border color. */
@@ -80,6 +87,12 @@ typedef NSUInteger NTUIToolTipViewArrowPosition;
 @property (nonatomic, retain) NSArray *orientationOrder;
 /** The position of the arrow. */
 @property (nonatomic, assign) NTUIToolTipViewArrowPosition arrowPosition;
+
+/** Helper method that automatically figures out the frame for various elements
+
+ @param item The element in which to point at
+ */
+- (void)pointAt:(id)item;
 
 ///-----------------------------------------------------------------------------
 /// @name Displaying

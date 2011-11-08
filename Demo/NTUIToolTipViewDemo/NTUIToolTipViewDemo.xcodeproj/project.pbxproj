@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA3F5EE51468E58600BDC7B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5EE41468E58600BDC7B1 /* UIKit.framework */; };
+		CA3F5EE71468E58600BDC7B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5EE61468E58600BDC7B1 /* Foundation.framework */; };
+		CA3F5EE91468E58600BDC7B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5EE81468E58600BDC7B1 /* CoreGraphics.framework */; };
+		CA3F5EEF1468E58600BDC7B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5EED1468E58600BDC7B1 /* InfoPlist.strings */; };
+		CA3F5EF11468E58600BDC7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EF01468E58600BDC7B1 /* main.m */; };
+		CA3F5EF51468E58600BDC7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */; };
+		CA3F5F031468E6C800BDC7B1 /* libNTiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */; };
+		CA3F5F081468E77E00BDC7B1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F061468E77E00BDC7B1 /* RootViewController.m */; };
+		CA3F5F091468E77E00BDC7B1 /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */; };
+		CA3F5F101468EA7600BDC7B1 /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CA3F5EE01468E58600BDC7B1 /* NTUIToolTipViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTUIToolTipViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3F5EE41468E58600BDC7B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CA3F5EE61468E58600BDC7B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CA3F5EE81468E58600BDC7B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA3F5EEC1468E58600BDC7B1 /* NTUIToolTipViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTUIToolTipViewDemo-Info.plist"; sourceTree = "<group>"; };
+		CA3F5EEE1468E58600BDC7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CA3F5EF01468E58600BDC7B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA3F5EF21468E58600BDC7B1 /* NTUIToolTipViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTUIToolTipViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		CA3F5EF31468E58600BDC7B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libNTiOS.a; path = "../../build/Release-iphoneos/libNTiOS.a"; sourceTree = "<group>"; };
+		CA3F5F051468E77E00BDC7B1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		CA3F5F061468E77E00BDC7B1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPhone.xib; sourceTree = "<group>"; };
+		CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
+		CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTUIToolTipView.h; path = ../../../Source/NTUIToolTipView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA3F5EDD1468E58600BDC7B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5F031468E6C800BDC7B1 /* libNTiOS.a in Frameworks */,
+				CA3F5EE51468E58600BDC7B1 /* UIKit.framework in Frameworks */,
+				CA3F5EE71468E58600BDC7B1 /* Foundation.framework in Frameworks */,
+				CA3F5EE91468E58600BDC7B1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA3F5ED51468E58600BDC7B1 = {
+			isa = PBXGroup;
+			children = (
+				CA3F5EEA1468E58600BDC7B1 /* NTUIToolTipViewDemo */,
+				CA3F5EE31468E58600BDC7B1 /* Frameworks */,
+				CA3F5EE11468E58600BDC7B1 /* Products */,
+				CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */,
+			);
+			sourceTree = "<group>";
+		};
+		CA3F5EE11468E58600BDC7B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5EE01468E58600BDC7B1 /* NTUIToolTipViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA3F5EE31468E58600BDC7B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5EE41468E58600BDC7B1 /* UIKit.framework */,
+				CA3F5EE61468E58600BDC7B1 /* Foundation.framework */,
+				CA3F5EE81468E58600BDC7B1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA3F5EEA1468E58600BDC7B1 /* NTUIToolTipViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */,
+				CA3F5EF31468E58600BDC7B1 /* AppDelegate.h */,
+				CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */,
+				CA3F5F051468E77E00BDC7B1 /* RootViewController.h */,
+				CA3F5F061468E77E00BDC7B1 /* RootViewController.m */,
+				CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */,
+				CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */,
+				CA3F5EEB1468E58600BDC7B1 /* Supporting Files */,
+			);
+			path = NTUIToolTipViewDemo;
+			sourceTree = "<group>";
+		};
+		CA3F5EEB1468E58600BDC7B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F5EEC1468E58600BDC7B1 /* NTUIToolTipViewDemo-Info.plist */,
+				CA3F5EED1468E58600BDC7B1 /* InfoPlist.strings */,
+				CA3F5EF01468E58600BDC7B1 /* main.m */,
+				CA3F5EF21468E58600BDC7B1 /* NTUIToolTipViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA3F5EDF1468E58600BDC7B1 /* NTUIToolTipViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3F5EF81468E58600BDC7B1 /* Build configuration list for PBXNativeTarget "NTUIToolTipViewDemo" */;
+			buildPhases = (
+				CA3F5EDC1468E58600BDC7B1 /* Sources */,
+				CA3F5EDD1468E58600BDC7B1 /* Frameworks */,
+				CA3F5EDE1468E58600BDC7B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NTUIToolTipViewDemo;
+			productName = NTUIToolTipViewDemo;
+			productReference = CA3F5EE01468E58600BDC7B1 /* NTUIToolTipViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA3F5ED71468E58600BDC7B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = CA3F5EDA1468E58600BDC7B1 /* Build configuration list for PBXProject "NTUIToolTipViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CA3F5ED51468E58600BDC7B1;
+			productRefGroup = CA3F5EE11468E58600BDC7B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA3F5EDF1468E58600BDC7B1 /* NTUIToolTipViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA3F5EDE1468E58600BDC7B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5EEF1468E58600BDC7B1 /* InfoPlist.strings in Resources */,
+				CA3F5F091468E77E00BDC7B1 /* RootViewController_iPhone.xib in Resources */,
+				CA3F5F101468EA7600BDC7B1 /* RootViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA3F5EDC1468E58600BDC7B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA3F5EF11468E58600BDC7B1 /* main.m in Sources */,
+				CA3F5EF51468E58600BDC7B1 /* AppDelegate.m in Sources */,
+				CA3F5F081468E77E00BDC7B1 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CA3F5EED1468E58600BDC7B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA3F5EEE1468E58600BDC7B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA3F5EF61468E58600BDC7B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA3F5EF71468E58600BDC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA3F5EF91468E58600BDC7B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CA3F5EFA1468E58600BDC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA3F5EDA1468E58600BDC7B1 /* Build configuration list for PBXProject "NTUIToolTipViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3F5EF61468E58600BDC7B1 /* Debug */,
+				CA3F5EF71468E58600BDC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3F5EF81468E58600BDC7B1 /* Build configuration list for PBXNativeTarget "NTUIToolTipViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA3F5EF91468E58600BDC7B1 /* Debug */,
+				CA3F5EFA1468E58600BDC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA3F5ED71468E58600BDC7B1 /* Project object */;
+}
