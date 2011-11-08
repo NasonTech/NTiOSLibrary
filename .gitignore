@@ -7,7 +7,6 @@
 *~.nib/
 build/*
 xcuserdata
-*.xcworkspace
 
 # OSX
 .DS_Store

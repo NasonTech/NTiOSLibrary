@@ -13,10 +13,10 @@
 		CA3F5EEF1468E58600BDC7B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5EED1468E58600BDC7B1 /* InfoPlist.strings */; };
 		CA3F5EF11468E58600BDC7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EF01468E58600BDC7B1 /* main.m */; };
 		CA3F5EF51468E58600BDC7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */; };
-		CA3F5F031468E6C800BDC7B1 /* libNTiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */; };
 		CA3F5F081468E77E00BDC7B1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F061468E77E00BDC7B1 /* RootViewController.m */; };
 		CA3F5F091468E77E00BDC7B1 /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */; };
 		CA3F5F101468EA7600BDC7B1 /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */; };
+		CA6183341469E80700F54CF3 /* libNTiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6183331469E80700F54CF3 /* libNTiOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		CA3F5EF21468E58600BDC7B1 /* NTUIToolTipViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTUIToolTipViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		CA3F5EF31468E58600BDC7B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libNTiOS.a; path = "../../build/Release-iphoneos/libNTiOS.a"; sourceTree = "<group>"; };
 		CA3F5F051468E77E00BDC7B1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		CA3F5F061468E77E00BDC7B1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPhone.xib; sourceTree = "<group>"; };
 		CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
-		CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTUIToolTipView.h; path = ../../../Source/NTUIToolTipView.h; sourceTree = "<group>"; };
+		CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTUIToolTipView.h; path = ../../Source/NTUIToolTipView.h; sourceTree = "<group>"; };
+		CA6183331469E80700F54CF3 /* libNTiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNTiOS.a; path = "../build/Release-iphoneos/libNTiOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA3F5F031468E6C800BDC7B1 /* libNTiOS.a in Frameworks */,
+				CA6183341469E80700F54CF3 /* libNTiOS.a in Frameworks */,
 				CA3F5EE51468E58600BDC7B1 /* UIKit.framework in Frameworks */,
 				CA3F5EE71468E58600BDC7B1 /* Foundation.framework in Frameworks */,
 				CA3F5EE91468E58600BDC7B1 /* CoreGraphics.framework in Frameworks */,
@@ -56,10 +56,10 @@
 		CA3F5ED51468E58600BDC7B1 = {
 			isa = PBXGroup;
 			children = (
+				CA6183331469E80700F54CF3 /* libNTiOS.a */,
 				CA3F5EEA1468E58600BDC7B1 /* NTUIToolTipViewDemo */,
 				CA3F5EE31468E58600BDC7B1 /* Frameworks */,
 				CA3F5EE11468E58600BDC7B1 /* Products */,
-				CA3F5F021468E6C800BDC7B1 /* libNTiOS.a */,
 			);
 			sourceTree = "<group>";
 		};
