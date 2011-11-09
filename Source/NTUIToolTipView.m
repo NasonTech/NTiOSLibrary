@@ -31,6 +31,7 @@
 	UILabel *titleLabel;
 	UILabel *messageLabel;
 	CGRect pointAtFrameInWindow;
+	CGFloat currentShrinkValue;
 }
 
 @synthesize title = _title;
@@ -46,6 +47,8 @@
 @synthesize orientation = _orientation;
 @synthesize orientationOrder = _orientationOrder;
 @synthesize arrowPosition = _arrowPosition;
+@synthesize shrinkToFit = _shrinkToFit;
+@synthesize maximumShrink = _maximumShrink;
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message
 {
@@ -66,6 +69,9 @@
 																 [NSNumber numberWithUnsignedInt:NTUIToolTipViewOrientationBottom],
 																 [NSNumber numberWithUnsignedInt:NTUIToolTipViewOrientationLeft],
 																 [NSNumber numberWithUnsignedInt:NTUIToolTipViewOrientationRight], nil];
+		self.shrinkToFit = YES;
+		self.maximumShrink = 1;
+		currentShrinkValue = 0;
 
 		self.layer.shadowColor = [[UIColor blackColor] CGColor];
 		self.layer.shadowOpacity = 0.7;
@@ -207,7 +213,7 @@
 
 - (CGRect)calculateFrameForOrientation:(NTUIToolTipViewOrientation)orientation
 {
-	CGRect frame = CGRectMake(0, 0, 50, 50);
+	CGRect frame = CGRectNull;
 
 	if (orientation == NTUIToolTipViewOrientationTop)
 	{
@@ -239,7 +245,7 @@
 	else if (orientation == NTUIToolTipViewOrientationBottom)
 	{
 		CGFloat frameMaxWidth = self.superview.frame.size.width - NTCGOffsetGetWidth(self.margin);
-		CGFloat frameMaxHeight = CGRectGetMinY(self.pointAt) - NTCGOffsetGetHeight(self.margin);
+		CGFloat frameMaxHeight = self.superview.frame.size.height - CGRectGetMaxY(self.pointAt) - self.margin.bottom;
 
 		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - NTCGOffsetGetWidth(self.padding),
 											frameMaxHeight - NTCGOffsetGetHeight(self.padding) - self.arrowSize.height);
@@ -285,7 +291,7 @@
 		CGFloat frameMaxWidth = self.superview.frame.size.width - CGRectGetMaxX(self.pointAt) - self.margin.right;
 		CGFloat frameMaxHeight = self.superview.frame.size.height - NTCGOffsetGetHeight(self.margin);
 
-		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - CGRectGetMaxX(self.pointAt) - self.margin.right,
+		CGSize contentsMaxSize = CGSizeMake(frameMaxWidth - self.margin.right,
 											frameMaxHeight - NTCGOffsetGetHeight(self.padding));
 		CGSize titleMinSize = [self.title sizeWithFont:titleLabel.font
 									 constrainedToSize:contentsMaxSize
@@ -325,10 +331,12 @@
 																												[NSNumber numberWithFloat:fabsf(bottomOffset)],
 																												[NSNumber numberWithFloat:fabsf(leftOffset)],
 																												[NSNumber numberWithFloat:fabsf(rightOffset)], nil]
-																			  forKeys:[NSArray arrayWithObjects:[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationTop],
-																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationBottom],
+																			  forKeys:[NSArray arrayWithObjects:
+																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationRight],
 																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationLeft],
-																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationRight], nil]];
+																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationBottom],
+																												[NSNumber numberWithUnsignedInteger:NTUIToolTipViewOrientationTop],
+																												nil]];
 	NSArray *orientationsOrderedByOffset = [offsetsAbsolute keysSortedByValueUsingSelector:@selector(compare:)];
 
 	CGRect superFrameMinusMargin = CGRectMake(self.superview.frame.origin.x + self.margin.left,
@@ -338,25 +346,25 @@
 	for (NSNumber *orientationNumber in orientationsOrderedByOffset)
 	{
 		NTUIToolTipViewOrientation orientation = [orientationNumber unsignedIntValue];
-		if (orientation == NTUIToolTipViewOrientationTop)
+		if (orientation == NTUIToolTipViewOrientationTop && !CGRectIsNull(topPlacementFrame))
 		{
 			CGRect clippedRect = CGRectIntersection(superFrameMinusMargin, topPlacementFrame);
 			if (CGRectEqualToRect(clippedRect, topPlacementFrame))
 				return NTUIToolTipViewOrientationTop;
 		}
-		else if (orientation == NTUIToolTipViewOrientationBottom)
+		else if (orientation == NTUIToolTipViewOrientationBottom && !CGRectIsNull(bottomPlacementFrame))
 		{
 			CGRect clippedRect = CGRectIntersection(superFrameMinusMargin, bottomPlacementFrame);
 			if (CGRectEqualToRect(clippedRect, bottomPlacementFrame))
 				return NTUIToolTipViewOrientationBottom;
 		}
-		else if (orientation == NTUIToolTipViewOrientationLeft)
+		else if (orientation == NTUIToolTipViewOrientationLeft && !CGRectIsNull(leftPlacementFrame))
 		{
 			CGRect clippedRect = CGRectIntersection(superFrameMinusMargin, leftPlacementFrame);
 			if (CGRectEqualToRect(clippedRect, leftPlacementFrame))
 				return NTUIToolTipViewOrientationLeft;
 		}
-		else if (orientation == NTUIToolTipViewOrientationRight)
+		else if (orientation == NTUIToolTipViewOrientationRight && !CGRectIsNull(rightPlacementFrame))
 		{
 			CGRect clippedRect = CGRectIntersection(superFrameMinusMargin, rightPlacementFrame);
 			if (CGRectEqualToRect(clippedRect, rightPlacementFrame))
@@ -364,10 +372,14 @@
 		}
 	}
 
-	titleLabel.font = [titleLabel.font fontWithSize:titleLabel.font.pointSize - 0.1];
-	messageLabel.font = [messageLabel.font fontWithSize:messageLabel.font.pointSize - 0.1];
+	if (self.shrinkToFit && currentShrinkValue <= self.maximumShrink)
+	{
+		titleLabel.font = [titleLabel.font fontWithSize:titleLabel.font.pointSize - 0.1];
+		messageLabel.font = [messageLabel.font fontWithSize:messageLabel.font.pointSize - 0.1];
+		currentShrinkValue += 0.1;
 
-//	return [self calculateOrientation];
+		return [self calculateOrientation];
+	}
 
 	return NTUIToolTipViewOrientationNone;
 }

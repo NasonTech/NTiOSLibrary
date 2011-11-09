@@ -24,20 +24,36 @@
 //  POSSIBILITY OF SUCH DAMAGE.
 
 #import "RootViewController.h"
-#import "NTiOSLibrary/NTUIToolTipView.h"
+#import <NTUIToolTipView.h>
+#import "SettingsViewController.h"
 
 @implementation RootViewController
 {
 	NTUIToolTipView *toolTip;
+	UIBarButtonItem *settingsButton;
 }
 
 #pragma mark - View lifecycle
+
+- (void)dealloc
+{
+	[settingsButton release];
+	[toolTip release];
+	[super dealloc];
+}
+
+- (void)viewDidLoad
+{
+	[self.navigationItem setTitle:@"NTUIToolTipViewDemo"];
+
+	settingsButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(doSettings:)];
+	[self.navigationItem setRightBarButtonItem:settingsButton];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
 	toolTip = [[NTUIToolTipView alloc] initWithMessage:@"Tap anywhere!"];
 	CGPoint center = [self.view convertPoint:self.view.center toView:nil];
-//	[toolTip pointAt:[NSValue valueWithCGRect:CGRectMake(center.x, center.y, 1, 1)]];
 	[toolTip setPointAt:CGRectMake(center.x, center.y, 1, 1)];
 	[toolTip show];
 }
@@ -54,9 +70,18 @@
 
 	toolTip = [[NTUIToolTipView alloc] initWithMessage:@"Tap anywhere!"];
 	CGPoint touched = [self.view convertPoint:[[touches anyObject] locationInView:self.view] toView:nil];
-//	[toolTip pointAt:[NSValue valueWithCGRect:CGRectMake(touched.x, touched.y, 1, 1)]];
 	[toolTip setPointAt:CGRectMake(touched.x, touched.y, 1, 1)];
 	[toolTip show];
+}
+
+- (void)doSettings:(UIBarButtonItem *)button
+{
+	[toolTip dismiss];
+	[toolTip release], toolTip = nil;
+
+	SettingsViewController *settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPhone" bundle:nil];
+	[self.navigationController pushViewController:settingsViewController animated:YES];
+	[settingsViewController release];
 }
 
 @end

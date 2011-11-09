@@ -30,11 +30,13 @@
 
 @synthesize window = _window;
 @synthesize rootViewController = _rootViewController;
+@synthesize navigationController = _navigationController;
 
 - (void)dealloc
 {
 	[_window release];
 	[_rootViewController release];
+	[_navigationController release];
     [super dealloc];
 }
 
@@ -47,7 +49,8 @@
 	} else {
 	    self.rootViewController = [[[RootViewController alloc] initWithNibName:@"RootViewController_iPad" bundle:nil] autorelease];
 	}
-	self.window.rootViewController = self.rootViewController;
+	self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
+	self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

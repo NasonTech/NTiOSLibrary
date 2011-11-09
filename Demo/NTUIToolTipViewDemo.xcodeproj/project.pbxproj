@@ -17,6 +17,8 @@
 		CA3F5F091468E77E00BDC7B1 /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */; };
 		CA3F5F101468EA7600BDC7B1 /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */; };
 		CA6183341469E80700F54CF3 /* libNTiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6183331469E80700F54CF3 /* libNTiOS.a */; };
+		CA61837F146A04C000F54CF3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA61837D146A04C000F54CF3 /* SettingsViewController.m */; };
+		CA618380146A04C000F54CF3 /* SettingsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA61837E146A04C000F54CF3 /* SettingsViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +36,10 @@
 		CA3F5F061468E77E00BDC7B1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPhone.xib; sourceTree = "<group>"; };
 		CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
-		CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTUIToolTipView.h; path = ../../Source/NTUIToolTipView.h; sourceTree = "<group>"; };
 		CA6183331469E80700F54CF3 /* libNTiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNTiOS.a; path = "../build/Release-iphoneos/libNTiOS.a"; sourceTree = "<group>"; };
+		CA61837C146A04C000F54CF3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CA61837D146A04C000F54CF3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CA61837E146A04C000F54CF3 /* SettingsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +88,15 @@
 		CA3F5EEA1468E58600BDC7B1 /* NTUIToolTipViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CA3F5F191468F7B000BDC7B1 /* NTUIToolTipView.h */,
 				CA3F5EF31468E58600BDC7B1 /* AppDelegate.h */,
 				CA3F5EF41468E58600BDC7B1 /* AppDelegate.m */,
 				CA3F5F051468E77E00BDC7B1 /* RootViewController.h */,
 				CA3F5F061468E77E00BDC7B1 /* RootViewController.m */,
 				CA3F5F071468E77E00BDC7B1 /* RootViewController_iPhone.xib */,
 				CA3F5F0F1468EA7600BDC7B1 /* RootViewController_iPad.xib */,
+				CA61837C146A04C000F54CF3 /* SettingsViewController.h */,
+				CA61837D146A04C000F54CF3 /* SettingsViewController.m */,
+				CA61837E146A04C000F54CF3 /* SettingsViewController_iPhone.xib */,
 				CA3F5EEB1468E58600BDC7B1 /* Supporting Files */,
 			);
 			path = NTUIToolTipViewDemo;
@@ -160,6 +166,7 @@
 				CA3F5EEF1468E58600BDC7B1 /* InfoPlist.strings in Resources */,
 				CA3F5F091468E77E00BDC7B1 /* RootViewController_iPhone.xib in Resources */,
 				CA3F5F101468EA7600BDC7B1 /* RootViewController_iPad.xib in Resources */,
+				CA618380146A04C000F54CF3 /* SettingsViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +180,7 @@
 				CA3F5EF11468E58600BDC7B1 /* main.m in Sources */,
 				CA3F5EF51468E58600BDC7B1 /* AppDelegate.m in Sources */,
 				CA3F5F081468E77E00BDC7B1 /* RootViewController.m in Sources */,
+				CA61837F146A04C000F54CF3 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +249,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../Source/**";
 				INFOPLIST_FILE = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
@@ -254,6 +263,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../Source/**";
 				INFOPLIST_FILE = "NTUIToolTipViewDemo/NTUIToolTipViewDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";

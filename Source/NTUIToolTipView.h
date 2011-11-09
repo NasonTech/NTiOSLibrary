@@ -87,6 +87,10 @@ typedef NSUInteger NTUIToolTipViewArrowPosition;
 @property (nonatomic, retain) NSArray *orientationOrder;
 /** The position of the arrow. */
 @property (nonatomic, assign) NTUIToolTipViewArrowPosition arrowPosition;
+/** Determines if the receiver will shrink to maintain its visibility on screen. */
+@property (nonatomic, assign) BOOL shrinkToFit;
+/** The minimum amount the receiver will shrink when adjusting itself to remain on screen. */
+@property (nonatomic, assign) CGFloat maximumShrink;
 
 /** Helper method that automatically figures out the frame for various elements
 
